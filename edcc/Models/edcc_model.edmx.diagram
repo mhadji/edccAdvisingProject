@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec71d47779f7407f9ef47a035740db21" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="edcc_advisingModel.Course_codes_org" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="edcc_advisingModel.Cours" Width="1.5" PointX="0.625" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="edcc_advisingModel.CourseType" Width="1.5" PointX="5.375" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="edcc_advisingModel.Program" Width="1.5" PointX="2.875" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="edcc_advisingModel.Un_prog_course" Width="1.5" PointX="2.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="edcc_advisingModel.University" Width="1.5" PointX="5.125" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="edcc_advisingModel.FK_Un_prog_course_Course_codes2" ManuallyRouted="false" />
+        <AssociationConnector Association="edcc_advisingModel.FK_Un_prog_course_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="edcc_advisingModel.FK_Un_prog_course_CourseType" ManuallyRouted="false" />
+        <AssociationConnector Association="edcc_advisingModel.FK_Un_prog_course_Programs" ManuallyRouted="false" />
+        <AssociationConnector Association="edcc_advisingModel.FK_Un_prog_course_Universities" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="edcc_advisingModel.sysdiagram" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="edcc_advisingModel.Course_codes_edcc" Width="1.5" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="edcc_advisingModel.FK_Un_prog_course_Course_codes_edcc" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,35 @@
+﻿@model edcc.Models.Course_codes_edcc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Course_codes_edcc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.edccCourse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edccCourse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.course_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course_id)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.edcc_Course_code_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

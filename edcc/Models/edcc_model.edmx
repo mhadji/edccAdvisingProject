@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="edcc_advisingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course_codes_edcc">
+          <Key>
+            <PropertyRef Name="edcc_Course_code_id" />
+          </Key>
+          <Property Name="edcc_Course_code_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="edccCourse" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="course_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Course_codes_org">
+          <Key>
+            <PropertyRef Name="Course_code_id" />
+          </Key>
+          <Property Name="Course_code_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Course#" Type="nchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Courses">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Name="course_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="course_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="course_des" Type="ntext" />
+        </EntityType>
+        <EntityType Name="CourseType">
+          <Key>
+            <PropertyRef Name="CoType_id" />
+          </Key>
+          <Property Name="CoType_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="course_type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Programs">
+          <Key>
+            <PropertyRef Name="prog_id" />
+          </Key>
+          <Property Name="prog_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prog_name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="prog_desc" Type="ntext" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Un_prog_course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="un_id" Type="int" Nullable="false" />
+          <Property Name="prog_id" Type="int" Nullable="false" />
+          <Property Name="course_id" Type="int" Nullable="false" />
+          <Property Name="courseType_id" Type="int" Nullable="false" />
+          <Property Name="course_code_org_id" Type="int" Nullable="false" />
+          <Property Name="course_code_edcc_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Universities">
+          <Key>
+            <PropertyRef Name="un_id" />
+          </Key>
+          <Property Name="un_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="un_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="un_description" Type="ntext" />
+        </EntityType>
+        <Association Name="FK_Un_prog_course_Course_codes_edcc">
+          <End Role="Course_codes_edcc" Type="Self.Course_codes_edcc" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course_codes_edcc">
+              <PropertyRef Name="edcc_Course_code_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="course_code_edcc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Course_codes2">
+          <End Role="Course_codes_org" Type="Self.Course_codes_org" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course_codes_org">
+              <PropertyRef Name="Course_code_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="course_code_org_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Courses">
+          <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="course_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="course_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_CourseType">
+          <End Role="CourseType" Type="Self.CourseType" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseType">
+              <PropertyRef Name="CoType_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="courseType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Programs">
+          <End Role="Programs" Type="Self.Programs" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programs">
+              <PropertyRef Name="prog_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="prog_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Universities">
+          <End Role="Universities" Type="Self.Universities" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Universities">
+              <PropertyRef Name="un_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="un_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="edcc_advisingModelStoreContainer">
+          <EntitySet Name="Course_codes_edcc" EntityType="Self.Course_codes_edcc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Course_codes_org" EntityType="Self.Course_codes_org" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseType" EntityType="Self.CourseType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Programs" EntityType="Self.Programs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Un_prog_course" EntityType="Self.Un_prog_course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Universities" EntityType="Self.Universities" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Un_prog_course_Course_codes_edcc" Association="Self.FK_Un_prog_course_Course_codes_edcc">
+            <End Role="Course_codes_edcc" EntitySet="Course_codes_edcc" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Course_codes2" Association="Self.FK_Un_prog_course_Course_codes2">
+            <End Role="Course_codes_org" EntitySet="Course_codes_org" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Courses" Association="Self.FK_Un_prog_course_Courses">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_CourseType" Association="Self.FK_Un_prog_course_CourseType">
+            <End Role="CourseType" EntitySet="CourseType" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Programs" Association="Self.FK_Un_prog_course_Programs">
+            <End Role="Programs" EntitySet="Programs" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Universities" Association="Self.FK_Un_prog_course_Universities">
+            <End Role="Universities" EntitySet="Universities" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="edcc_advisingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course_codes_org">
+          <Key>
+            <PropertyRef Name="Course_code_id" />
+          </Key>
+          <Property Name="Course_code_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Course_" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Un_prog_course" Relationship="Self.FK_Un_prog_course_Course_codes2" FromRole="Course_codes_org" ToRole="Un_prog_course" />
+        </EntityType>
+        <EntityType Name="Cours">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Name="course_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="course_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="course_des" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Un_prog_course" Relationship="Self.FK_Un_prog_course_Courses" FromRole="Courses" ToRole="Un_prog_course" />
+        </EntityType>
+        <EntityType Name="CourseType">
+          <Key>
+            <PropertyRef Name="CoType_id" />
+          </Key>
+          <Property Name="CoType_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="course_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Un_prog_course" Relationship="Self.FK_Un_prog_course_CourseType" FromRole="CourseType" ToRole="Un_prog_course" />
+        </EntityType>
+        <EntityType Name="Program">
+          <Key>
+            <PropertyRef Name="prog_id" />
+          </Key>
+          <Property Name="prog_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prog_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prog_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Un_prog_course" Relationship="Self.FK_Un_prog_course_Programs" FromRole="Programs" ToRole="Un_prog_course" />
+        </EntityType>
+        <EntityType Name="Un_prog_course">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="un_id" Type="Int32" Nullable="false" />
+          <Property Name="prog_id" Type="Int32" Nullable="false" />
+          <Property Name="course_id" Type="Int32" Nullable="false" />
+          <Property Name="courseType_id" Type="Int32" Nullable="false" />
+          <Property Name="course_code_org_id" Type="Int32" Nullable="false" />
+          <Property Name="course_code_edcc_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Course_codes_org" Relationship="Self.FK_Un_prog_course_Course_codes2" FromRole="Un_prog_course" ToRole="Course_codes_org" />
+          <NavigationProperty Name="Cours" Relationship="Self.FK_Un_prog_course_Courses" FromRole="Un_prog_course" ToRole="Courses" />
+          <NavigationProperty Name="CourseType" Relationship="Self.FK_Un_prog_course_CourseType" FromRole="Un_prog_course" ToRole="CourseType" />
+          <NavigationProperty Name="Program" Relationship="Self.FK_Un_prog_course_Programs" FromRole="Un_prog_course" ToRole="Programs" />
+          <NavigationProperty Name="University" Relationship="Self.FK_Un_prog_course_Universities" FromRole="Un_prog_course" ToRole="Universities" />
+          <NavigationProperty Name="Course_codes_edcc" Relationship="edcc_advisingModel.FK_Un_prog_course_Course_codes_edcc" FromRole="Un_prog_course" ToRole="Course_codes_edcc" />
+        </EntityType>
+        <EntityType Name="University">
+          <Key>
+            <PropertyRef Name="un_id" />
+          </Key>
+          <Property Name="un_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="un_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="un_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Un_prog_course" Relationship="Self.FK_Un_prog_course_Universities" FromRole="Universities" ToRole="Un_prog_course" />
+        </EntityType>
+        <Association Name="FK_Un_prog_course_Course_codes2">
+          <End Role="Course_codes_org" Type="Self.Course_codes_org" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course_codes_org">
+              <PropertyRef Name="Course_code_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="course_code_org_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Courses">
+          <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courses">
+              <PropertyRef Name="course_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="course_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_CourseType">
+          <End Role="CourseType" Type="Self.CourseType" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CourseType">
+              <PropertyRef Name="CoType_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="courseType_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Programs">
+          <End Role="Programs" Type="Self.Program" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Programs">
+              <PropertyRef Name="prog_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="prog_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Un_prog_course_Universities">
+          <End Role="Universities" Type="Self.University" Multiplicity="1" />
+          <End Role="Un_prog_course" Type="Self.Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Universities">
+              <PropertyRef Name="un_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="un_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="edcc_advisingDbContex" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Course_codes_org" EntityType="Self.Course_codes_org" />
+          <EntitySet Name="Courses" EntityType="Self.Cours" />
+          <EntitySet Name="CourseTypes" EntityType="Self.CourseType" />
+          <EntitySet Name="Programs" EntityType="Self.Program" />
+          <EntitySet Name="Un_prog_course" EntityType="Self.Un_prog_course" />
+          <EntitySet Name="Universities" EntityType="Self.University" />
+          <AssociationSet Name="FK_Un_prog_course_Course_codes2" Association="Self.FK_Un_prog_course_Course_codes2">
+            <End Role="Course_codes_org" EntitySet="Course_codes_org" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Courses" Association="Self.FK_Un_prog_course_Courses">
+            <End Role="Courses" EntitySet="Courses" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_CourseType" Association="Self.FK_Un_prog_course_CourseType">
+            <End Role="CourseType" EntitySet="CourseTypes" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Programs" Association="Self.FK_Un_prog_course_Programs">
+            <End Role="Programs" EntitySet="Programs" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Un_prog_course_Universities" Association="Self.FK_Un_prog_course_Universities">
+            <End Role="Universities" EntitySet="Universities" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="edcc_advisingModel.sysdiagram" />
+          <EntitySet Name="Course_codes_edcc" EntityType="edcc_advisingModel.Course_codes_edcc" />
+          <AssociationSet Name="FK_Un_prog_course_Course_codes_edcc" Association="edcc_advisingModel.FK_Un_prog_course_Course_codes_edcc">
+            <End Role="Course_codes_edcc" EntitySet="Course_codes_edcc" />
+            <End Role="Un_prog_course" EntitySet="Un_prog_course" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Course_codes_edcc">
+          <Key>
+            <PropertyRef Name="edcc_Course_code_id" />
+          </Key>
+          <Property Name="edcc_Course_code_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="edccCourse" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="course_id" Type="Int32" />
+          <NavigationProperty Name="Un_prog_course" Relationship="edcc_advisingModel.FK_Un_prog_course_Course_codes_edcc" FromRole="Course_codes_edcc" ToRole="Un_prog_course" />
+        </EntityType>
+        <Association Name="FK_Un_prog_course_Course_codes_edcc">
+          <End Type="edcc_advisingModel.Course_codes_edcc" Role="Course_codes_edcc" Multiplicity="1" />
+          <End Type="edcc_advisingModel.Un_prog_course" Role="Un_prog_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course_codes_edcc">
+              <PropertyRef Name="edcc_Course_code_id" />
+            </Principal>
+            <Dependent Role="Un_prog_course">
+              <PropertyRef Name="course_code_edcc_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="edcc_advisingModelStoreContainer" CdmEntityContainer="edcc_advisingDbContex">
+          <EntitySetMapping Name="Course_codes_org">
+            <EntityTypeMapping TypeName="edcc_advisingModel.Course_codes_org">
+              <MappingFragment StoreEntitySet="Course_codes_org">
+                <ScalarProperty Name="Course_code_id" ColumnName="Course_code_id" />
+                <ScalarProperty Name="Course_" ColumnName="Course#" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="edcc_advisingModel.Cours">
+              <MappingFragment StoreEntitySet="Courses">
+                <ScalarProperty Name="course_id" ColumnName="course_id" />
+                <ScalarProperty Name="course_name" ColumnName="course_name" />
+                <ScalarProperty Name="course_des" ColumnName="course_des" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CourseTypes">
+            <EntityTypeMapping TypeName="edcc_advisingModel.CourseType">
+              <MappingFragment StoreEntitySet="CourseType">
+                <ScalarProperty Name="CoType_id" ColumnName="CoType_id" />
+                <ScalarProperty Name="course_type" ColumnName="course_type" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Programs">
+            <EntityTypeMapping TypeName="edcc_advisingModel.Program">
+              <MappingFragment StoreEntitySet="Programs">
+                <ScalarProperty Name="prog_id" ColumnName="prog_id" />
+                <ScalarProperty Name="prog_name" ColumnName="prog_name" />
+                <ScalarProperty Name="prog_desc" ColumnName="prog_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Un_prog_course">
+            <EntityTypeMapping TypeName="edcc_advisingModel.Un_prog_course">
+              <MappingFragment StoreEntitySet="Un_prog_course">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="un_id" ColumnName="un_id" />
+                <ScalarProperty Name="prog_id" ColumnName="prog_id" />
+                <ScalarProperty Name="course_id" ColumnName="course_id" />
+                <ScalarProperty Name="courseType_id" ColumnName="courseType_id" />
+                <ScalarProperty Name="course_code_org_id" ColumnName="course_code_org_id" />
+                <ScalarProperty Name="course_code_edcc_id" ColumnName="course_code_edcc_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Universities">
+            <EntityTypeMapping TypeName="edcc_advisingModel.University">
+              <MappingFragment StoreEntitySet="Universities">
+                <ScalarProperty Name="un_id" ColumnName="un_id" />
+                <ScalarProperty Name="un_name" ColumnName="un_name" />
+                <ScalarProperty Name="un_description" ColumnName="un_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="edcc_advisingModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Course_codes_edcc">
+            <EntityTypeMapping TypeName="edcc_advisingModel.Course_codes_edcc">
+              <MappingFragment StoreEntitySet="Course_codes_edcc">
+                <ScalarProperty Name="course_id" ColumnName="course_id" />
+                <ScalarProperty Name="edccCourse" ColumnName="edccCourse" />
+                <ScalarProperty Name="edcc_Course_code_id" ColumnName="edcc_Course_code_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

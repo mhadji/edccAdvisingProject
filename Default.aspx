@@ -3,9 +3,11 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+      <h1>Advising for Student Success</h1>
+        <p class="lead">Academic Advising educates students as they navigate the world of higher education; providing support for articulation and achievement of their educational and career goals, 
+            and by creating an environment for personal transformation, lifelong learning, and success.</p>
+
+        <p><a href="http://students.edcc.edu/advising/default.html" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 
     <div class="row">

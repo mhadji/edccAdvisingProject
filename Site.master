@@ -48,7 +48,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="/default.aspx">
-                        <img src="images/edcc_logo.png"  alt="logo"></a>
+                        <img src="/images/edcc_logo.png"  alt="logo"></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">

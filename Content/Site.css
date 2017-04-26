@@ -27,7 +27,7 @@ textarea {
         padding: 0;
     }
 }
-/*.navbar-inverse {
-  background-color: green;
+.navbar-inverse {
+  background-color: indigo;
   border-color: #080808;
-}*/
+}

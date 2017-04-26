@@ -51,6 +51,7 @@
                         <img src="/images/edcc_logo.png"  alt="logo"></a>
                 </div>
                 <div class="navbar-collapse collapse">
+               
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/eq/Default.aspx">Equivalency Guide</a></li>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1.eq {
+namespace edccAdvisingProject.eq {
     
     
     public partial class WebForm1 {

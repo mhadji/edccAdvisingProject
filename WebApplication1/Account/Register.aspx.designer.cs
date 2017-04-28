@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1.Account {
+namespace edccAdvisingProject.Account {
     
     
     public partial class Register {

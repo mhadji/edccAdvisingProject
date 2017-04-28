@@ -7,9 +7,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using WebApplication1.Models;
+using edccAdvisingProject.Models;
 
-namespace WebApplication1
+namespace edccAdvisingProject
 {
     public partial class Startup {
 

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication1.Admin
+namespace edccAdvisingProject.Admin
 {
     public partial class _default : System.Web.UI.Page
     {

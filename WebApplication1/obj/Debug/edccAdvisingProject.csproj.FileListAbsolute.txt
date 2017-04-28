@@ -47,6 +47,9 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\vbc.exe.config
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\vbc.rsp
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\VBCSCompiler.exe
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\VBCSCompiler.exe.config
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\edccAdvisingProject.dll.config
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\edccAdvisingProject.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\edccAdvisingProject.pdb
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Antlr3.Runtime.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\AspNet.ScriptManager.bootstrap.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\AspNet.ScriptManager.jQuery.dll
@@ -110,9 +113,6 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.AspNet.Identity.Entity
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Providers.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\edccAdvising.dll.config
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\edccAdvising.dll
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\edccAdvising.pdb
+C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.pdb
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.csprojResolveAssemblyReference.cache
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvising.dll
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvising.pdb

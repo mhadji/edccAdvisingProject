@@ -749,7 +749,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>edcc_advisingDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\EDcc\edccAdvisingProject\App_Code\edcc_advisingDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\EDcc\edccAdvisingProjectProject\App_Code\edcc_advisingDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Transfers</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

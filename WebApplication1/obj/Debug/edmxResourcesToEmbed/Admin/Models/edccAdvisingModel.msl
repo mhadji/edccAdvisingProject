@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="edcc_advisingModelStoreContainer" CdmEntityContainer="edcc_advisingEntities">
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="edcc_advisingModel.course">
+        <MappingFragment StoreEntitySet="course">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="EdccCode" ColumnName="EdccCode" />
+          <ScalarProperty Name="Course1" ColumnName="Course" />
+          <ScalarProperty Name="SkillSet" ColumnName="SkillSet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="edcc_program">
+      <EntityTypeMapping TypeName="edcc_advisingModel.edcc_program">
+        <MappingFragment StoreEntitySet="edcc_program">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ProgCode" ColumnName="ProgCode" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="majors">
+      <EntityTypeMapping TypeName="edcc_advisingModel.major">
+        <MappingFragment StoreEntitySet="major">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Major1" ColumnName="Major" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universities">
+      <EntityTypeMapping TypeName="edcc_advisingModel.University">
+        <MappingFragment StoreEntitySet="University">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="University1" ColumnName="University" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

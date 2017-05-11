@@ -8,111 +8,109 @@ using System.Web;
 using System.Web.Mvc;
 using edccAdvisingProject.Models;
 
-namespace edccAdvisingProject.controllers
+namespace edccAdvisingProject.Controllers
 {
-    [Authorize]
-    public class UniversitiesController : Controller
+    public class edcc_programController : Controller
     {
         private edcc_advisingEntities db = new edcc_advisingEntities();
 
-        // GET: Universities
-
+        // GET: edcc_program
         public ActionResult Index()
         {
-            return View(db.Universities.ToList());
+            return View(db.edcc_program.ToList());
         }
 
-        // GET: Universities/Details/5
+        // GET: edcc_program/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            University university = db.Universities.Find(id);
-            if (university == null)
+            edcc_program edcc_program = db.edcc_program.Find(id);
+            if (edcc_program == null)
             {
                 return HttpNotFound();
             }
-            return View(university);
+            return View(edcc_program);
         }
 
-        // GET: Universities/Create
+        // GET: edcc_program/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Universities/Create
+        // POST: edcc_program/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,University1")] University university)
+        public ActionResult Create([Bind(Include = "id,ProgCode,ProgramName")] edcc_program edcc_program)
         {
             if (ModelState.IsValid)
             {
-                db.Universities.Add(university);
+                db.edcc_program.Add(edcc_program);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(university);
+            return View(edcc_program);
         }
 
-        // GET: Universities/Edit/5
+        // GET: edcc_program/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            University university = db.Universities.Find(id);
-            if (university == null)
+            edcc_program edcc_program = db.edcc_program.Find(id);
+            if (edcc_program == null)
             {
                 return HttpNotFound();
             }
-            return View(university);
+            return View(edcc_program);
         }
 
-        // POST: Universities/Edit/5
+        // POST: edcc_program/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,University1")] University university)
+        public ActionResult Edit([Bind(Include = "id,ProgCode,ProgramName")] edcc_program edcc_program)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(university).State = EntityState.Modified;
+                db.Entry(edcc_program).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(university);
+            return View(edcc_program);
         }
 
-        // GET: Universities/Delete/5
+        // GET: edcc_program/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            University university = db.Universities.Find(id);
-            if (university == null)
+            edcc_program edcc_program = db.edcc_program.Find(id);
+            if (edcc_program == null)
             {
                 return HttpNotFound();
             }
-            return View(university);
+            return View(edcc_program);
         }
 
-        // POST: Universities/Delete/5
+        // POST: edcc_program/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            University university = db.Universities.Find(id);
-            db.Universities.Remove(university);
+            edcc_program edcc_program = db.edcc_program.Find(id);
+            db.edcc_program.Remove(edcc_program);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

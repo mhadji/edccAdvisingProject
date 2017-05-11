@@ -127,3 +127,4 @@ C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.pdb
+C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.csprojResolveAssemblyReference.cache

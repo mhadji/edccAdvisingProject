@@ -11,7 +11,7 @@
                 <asp:CheckBox ID="CBuntoggol" runat="server" AutoPostBack="True" OnCheckedChanged="CBuntoggol_CheckedChanged" Text="Select All" Font-Size="X-Small" />
             </p>
             <asp:CheckBoxList ID="CBLuniversities" runat="server" DataSourceID="DSun" DataTextField="University" DataValueField="University" Font-Size="X-Small"></asp:CheckBoxList>
-            <asp:SqlDataSource ID="DSun" runat="server" ConnectionString="<%$ ConnectionStrings:edcc_advisingConnectionString %>" SelectCommand="SELECT DISTINCT University FROM Transfers ORDER BY University"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="DSun" runat="server" ConnectionString="<%$ ConnectionStrings:edcc_advisingConnectionString %>" SelectCommand="SELECT DISTINCT University FROM University ORDER BY University"></asp:SqlDataSource>
         </div>
         <div class="col-md-6" style="overflow-y: scroll; height: 300px">
             <h4>Programs</h4>
@@ -19,7 +19,8 @@
                 <asp:CheckBox ID="CBprtoggol" runat="server" AutoPostBack="True" Text="Select ALL" Font-Size="X-Small" OnCheckedChanged="CBprtoggol_CheckedChanged" />
             </p>
             <asp:CheckBoxList ID="CBLprograms" runat="server" DataSourceID="DSpr" DataTextField="Major" DataValueField="Major" Font-Size="X-Small"></asp:CheckBoxList>
-            <asp:SqlDataSource ID="DSpr" runat="server" ConnectionString="<%$ ConnectionStrings:edcc_advisingConnectionString %>" SelectCommand="SELECT DISTINCT Major FROM Transfers ORDER BY Major"></asp:SqlDataSource>
+          
+            <asp:SqlDataSource ID="DSpr" runat="server" ConnectionString="<%$ ConnectionStrings:edcc_advisingConnectionString %>" SelectCommand="SELECT Major FROM major ORDER BY Major"></asp:SqlDataSource>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -36,8 +37,8 @@
             <div class="row">
                 <asp:Button ID="BTNsearch" runat="server" Text="Search!!!" OnClick="BTNsearch_Click" />
 
-                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1050px">
-                    <LocalReport ReportPath="eq\Reports\eqTbl.rdlc">
+                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1304px" Height="1203px">
+                    <LocalReport ReportPath="eq\Reports\Report1.rdlc">
                         <DataSources>
                             <rsweb:ReportDataSource DataSourceId="DSreport" Name="DataSet1" />
                         </DataSources>

@@ -1,3 +1,4 @@
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ReportViewer.WebForms.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\ApplicationInsights.config
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\csc.exe
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\csc.exe.config
@@ -77,14 +78,19 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Google.d
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.OAuth.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Twitter.dll
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ReportViewer.WebForms.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ScriptManager.WebForms.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Newtonsoft.Json.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Owin.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Helpers.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Mvc.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Optimization.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Providers.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Razor.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.WebPages.Deployment.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.WebPages.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.WebPages.Razor.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\WebGrease.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Antlr3.Runtime.pdb
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.AI.DependencyCollector.xml
@@ -103,6 +109,12 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Microsof
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.OAuth.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Twitter.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Newtonsoft.Json.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Helpers.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Mvc.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Razor.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.WebPages.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.WebPages.Deployment.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.WebPages.Razor.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Optimization.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\EntityFramework.xml
@@ -115,4 +127,3 @@ C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.pdb
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.csprojResolveAssemblyReference.cache

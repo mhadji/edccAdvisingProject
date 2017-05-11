@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="edcc_advisingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EdccCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="Course" Type="nvarchar" MaxLength="70" />
+    <Property Name="SkillSet" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="edcc_program">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProgCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ProgramName" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="major">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Major" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="University">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="University" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="edcc_advisingModelStoreContainer">
+    <EntitySet Name="course" EntityType="Self.course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="edcc_program" EntityType="Self.edcc_program" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="major" EntityType="Self.major" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="University" EntityType="Self.University" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

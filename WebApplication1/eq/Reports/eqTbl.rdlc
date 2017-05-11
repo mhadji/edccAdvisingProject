@@ -356,14 +356,12 @@
                           <Color>#e6eefc</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>#c6daf8</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -453,10 +451,6 @@
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>Major</rd:DefaultName>
-                        <Visibility>
-                          <Hidden>true</Hidden>
-                          <ToggleItem>University</ToggleItem>
-                        </Visibility>
                         <Style>
                           <Border>
                             <Color>#e6eefc</Color>
@@ -495,10 +489,6 @@
                               </Paragraph>
                             </Paragraphs>
                             <rd:DefaultName>ProgCode</rd:DefaultName>
-                            <Visibility>
-                              <Hidden>true</Hidden>
-                              <ToggleItem>University</ToggleItem>
-                            </Visibility>
                             <Style>
                               <Border>
                                 <Color>#e6eefc</Color>
@@ -518,10 +508,6 @@
                       </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
-                  <Visibility>
-                    <Hidden>true</Hidden>
-                    <ToggleItem>University</ToggleItem>
-                  </Visibility>
                 </TablixMember>
               </TablixMembers>
             </TablixMember>
@@ -682,10 +668,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.14062in</Height>
     <Style />
   </Body>
-  <Width>6.23958in</Width>
+  <Width>4.65625in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -700,7 +686,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>5db9d4f1-75ab-4063-8042-62a0ef9fbef6</rd:DataSourceID>
+      <rd:DataSourceID>a6b566d8-0717-4c2c-8b1b-06ef48a4330f</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -749,11 +735,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>edcc_advisingDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\EDcc\edccAdvisingProjectProject\App_Code\edcc_advisingDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>Transfers</rd:TableName>
+        <rd:SchemaPath>C:\EDcc\edccAdvisingProject\WebApplication1\edcc_advisingDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>report_view</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TransfersTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>report_viewTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

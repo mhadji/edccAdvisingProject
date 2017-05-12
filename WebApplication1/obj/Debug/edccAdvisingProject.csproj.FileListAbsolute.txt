@@ -127,3 +127,8 @@ C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.pdb
+C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.csprojResolveAssemblyReference.cache
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.Mvc.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.Mvc.xml

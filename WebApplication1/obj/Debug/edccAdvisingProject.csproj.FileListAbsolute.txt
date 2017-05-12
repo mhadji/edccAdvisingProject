@@ -1,4 +1,3 @@
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ReportViewer.WebForms.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\ApplicationInsights.config
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\csc.exe
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\csc.exe.config
@@ -78,6 +77,7 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Google.d
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.OAuth.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Twitter.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ReportViewer.WebForms.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ScriptManager.WebForms.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
@@ -127,4 +127,3 @@ C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.pdb
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.csprojResolveAssemblyReference.cache

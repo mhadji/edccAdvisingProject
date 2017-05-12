@@ -8,7 +8,7 @@ namespace edccAdvisingProject.Controllers
 {
     public class AdminController : Controller
     {
-        [Authorize(Users ="mhadji@frontier.com" )]
+        [Authorize]
         // GET: Admin
         public ActionResult Index()
         {

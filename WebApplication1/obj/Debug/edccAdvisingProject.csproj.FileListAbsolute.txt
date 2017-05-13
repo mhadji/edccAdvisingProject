@@ -1,3 +1,5 @@
+C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
+C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\ApplicationInsights.config
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\csc.exe
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\roslyn\csc.exe.config
@@ -83,6 +85,8 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.ScriptManager.WebForms
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Newtonsoft.Json.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Owin.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.dll
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.Mvc.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Helpers.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Mvc.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Optimization.dll
@@ -109,6 +113,8 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Microsof
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.OAuth.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.Owin.Security.Twitter.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Newtonsoft.Json.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.xml
+C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.Mvc.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Helpers.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Mvc.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Razor.xml
@@ -123,12 +129,5 @@ C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.AspNet.Identity.Core.x
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\EDcc\edccAdvisingProject\WebApplication1\bin\System.Web.Providers.xml
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.cache
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\RdlCompile.compiled
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.dll
 C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.pdb
-C:\EDcc\edccAdvisingProject\WebApplication1\obj\Debug\edccAdvisingProject.csprojResolveAssemblyReference.cache
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.dll
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.Mvc.dll
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.xml
-C:\EDcc\edccAdvisingProject\WebApplication1\bin\PagedList.Mvc.xml

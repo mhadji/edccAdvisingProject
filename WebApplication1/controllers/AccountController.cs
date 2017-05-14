@@ -80,7 +80,7 @@ namespace edccAdvisingProject.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -156,18 +156,20 @@ namespace edccAdvisingProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    
+                    // Put user in Admin role
+                    UserManager.AddToRole(user.Id, "public");
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
@@ -509,12 +511,13 @@ namespace edccAdvisingProject.Controllers
         #region private void CreateAdminIfNeeded()
         private void CreateAdminIfNeeded()
         {
-            // Get Admin Account
+            // Get default Admin Account info from web.conf
             string AdminUserName = ConfigurationManager.AppSettings["AdminUserName"];
+            string AdminEmail = ConfigurationManager.AppSettings["AdminEmail"];
             string AdminPassword = ConfigurationManager.AppSettings["AdminPassword"];
 
             // See if Admin exists
-            var objAdminUser = UserManager.FindByEmail(AdminUserName);
+            var objAdminUser = UserManager.FindByEmail(AdminEmail);
 
             if (objAdminUser == null)
             {
@@ -523,11 +526,13 @@ namespace edccAdvisingProject.Controllers
                 {
                     // Create the Admin Role (if needed)
                     IdentityRole objAdminRole = new IdentityRole("Administrator");
+                    IdentityRole objPublicRole = new IdentityRole("Public");
                     RoleManager.Create(objAdminRole);
+                    RoleManager.Create(objPublicRole);
                 }
 
                 // Create Admin user
-                var objNewAdminUser = new ApplicationUser { UserName = AdminUserName, Email = AdminUserName };
+                var objNewAdminUser = new ApplicationUser { UserName = AdminUserName, Email = AdminEmail };
                 var AdminUserCreateResult = UserManager.Create(objNewAdminUser, AdminPassword);
                 // Put user in Admin role
                 UserManager.AddToRole(objNewAdminUser.Id, "Administrator");

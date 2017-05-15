@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<div class="jumbotron">
+<div class="jumbotron" style="background-image: url(images/decore.jpg)">
     <h1>Advising for Student Success</h1>
     <p class="lead">
         Academic Advising educates students as they navigate the world of higher education; providing support for articulation and achievement of their educational and career goals,

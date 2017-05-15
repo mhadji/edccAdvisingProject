@@ -97,10 +97,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/26/2017 22:08:05</publishTime>
     </File>
     <File Include="bin/edccAdvisingProject.dll">
-      <publishTime>05/13/2017 21:31:36</publishTime>
+      <publishTime>05/14/2017 10:15:38</publishTime>
     </File>
     <File Include="bin/edccAdvisingProject.pdb">
-      <publishTime>05/13/2017 21:31:36</publishTime>
+      <publishTime>05/14/2017 10:15:38</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -598,10 +598,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/12/2017 07:10:31</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>05/13/2017 10:28:05</publishTime>
+      <publishTime>05/14/2017 07:52:15</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>05/13/2017 10:28:05</publishTime>
+      <publishTime>05/14/2017 08:41:38</publishTime>
     </File>
     <File Include="Views/Account/ResetPassword.cshtml">
       <publishTime>05/13/2017 10:28:05</publishTime>
@@ -706,7 +706,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/12/2017 16:07:52</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/13/2017 21:31:38</publishTime>
+      <publishTime>05/14/2017 11:33:56</publishTime>
     </File>
   </ItemGroup>
 </Project>

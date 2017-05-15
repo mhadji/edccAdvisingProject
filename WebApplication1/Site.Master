@@ -55,7 +55,7 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/eq/Default1.aspx">Equivalency Guide</a></li>
                         <li><a runat="server" href="~/Home/Contact">Contact</a></li>
-                    </ul>
+                       </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
